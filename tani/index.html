@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanishka Sharma — Model Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+:root{
+--cream:#fbf9f6;
+--ink:#1a1814;
+--charcoal:#2b2723;
+--gold:#c6a06b;
+--gold-soft:#e8d2ad;
+--line:#e8e3da;
+--muted:#6f6a62;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:var(--cream);
+color:var(--ink);
+}
+
+h1,h2,h3{
+font-family:'Playfair Display',serif;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:var(--cream);
+padding:22px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid var(--line);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo h1{
+font-size:26px;
+font-weight:600;
+letter-spacing:1px;
+}
+
+.logo p{
+font-size:11px;
+letter-spacing:2.5px;
+color:var(--muted);
+margin-top:4px;
+}
+
+.nav-right{
+display:flex;
+align-items:center;
+gap:48px;
+}
+
+.nav-links{
+display:flex;
+gap:34px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:var(--charcoal);
+font-weight:500;
+font-size:13px;
+letter-spacing:1px;
+padding-bottom:6px;
+border-bottom:2px solid transparent;
+transition:.25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+border-bottom-color:var(--gold);
+}
+
+.social{
+display:flex;
+gap:18px;
+}
+
+.social a{
+color:var(--charcoal);
+font-size:17px;
+transition:.25s;
+}
+
+.social a:hover{
+color:var(--gold);
+}
+
+/* HERO */
+
+.hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+background:var(--ink);
+min-height:88vh;
+}
+
+.hero-left{
+padding:90px 80px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+color:#f3efe8;
+}
+
+.hero-left .greet{
+font-family:'Cormorant Garamond',serif;
+font-style:italic;
+font-size:34px;
+color:var(--gold-soft);
+}
+
+.hero-left h1{
+font-size:64px;
+font-weight:600;
+line-height:1.08;
+margin:16px 0 22px;
+}
+
+.line{
+width:70px;
+height:2px;
+background:var(--gold);
+margin-bottom:22px;
+}
+
+.hero-left h2{
+font-size:19px;
+font-weight:500;
+letter-spacing:2px;
+text-transform:uppercase;
+color:var(--gold-soft);
+margin-bottom:20px;
+}
+
+.hero-left p{
+max-width:420px;
+line-height:1.8;
+font-size:15px;
+color:#cfc8bd;
+font-weight:300;
+}
+
+.btn{
+margin-top:36px;
+display:inline-block;
+background:var(--gold);
+padding:16px 38px;
+text-decoration:none;
+color:var(--ink);
+font-weight:600;
+font-size:13px;
+letter-spacing:1.5px;
+width:max-content;
+transition:.25s;
+}
+
+.btn:hover{
+background:var(--gold-soft);
+}
+
+.hero-right{
+position:relative;
+overflow:hidden;
+}
+
+.hero-right img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+/* ABOUT */
+
+.about{
+padding:100px 6%;
+display:grid;
+grid-template-columns:380px 1fr;
+gap:70px;
+align-items:start;
+}
+
+.about-photo{
+width:100%;
+border-radius:2px;
+object-fit:cover;
+aspect-ratio:3/4;
+}
+
+.about-content .eyebrow{
+font-size:12px;
+letter-spacing:3px;
+color:var(--gold);
+font-weight:600;
+margin-bottom:8px;
+}
+
+.about-content h2{
+font-size:42px;
+font-weight:600;
+margin-bottom:18px;
+}
+
+.about-content > p{
+line-height:1.9;
+margin-bottom:40px;
+color:var(--muted);
+max-width:560px;
+font-size:15px;
+}
+
+.details{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:0;
+border-top:1px solid var(--line);
+}
+
+.detail{
+padding:26px 10px 26px 0;
+border-bottom:1px solid var(--line);
+}
+
+.detail:nth-child(3n+2){
+padding-left:24px;
+border-left:1px solid var(--line);
+border-right:1px solid var(--line);
+}
+
+.detail i{
+font-size:18px;
+color:var(--gold);
+margin-bottom:10px;
+display:block;
+}
+
+.detail h4{
+font-size:11px;
+letter-spacing:1.5px;
+color:var(--muted);
+font-weight:500;
+margin-bottom:4px;
+}
+
+.detail p{
+font-size:15px;
+font-weight:500;
+}
+
+/* PORTFOLIO */
+
+.portfolio{
+padding:100px 6%;
+text-align:center;
+background:#f4f0e9;
+}
+
+.eyebrow-center{
+font-size:12px;
+letter-spacing:3px;
+color:var(--gold);
+font-weight:600;
+margin-bottom:8px;
+}
+
+.portfolio h2{
+font-size:42px;
+font-weight:600;
+margin-bottom:50px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:18px;
+}
+
+.gallery-item img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:2px;
+display:block;
+transition:.35s;
+}
+
+.gallery-item:hover img{
+transform:scale(1.03);
+}
+
+.gallery-item h4{
+margin-top:14px;
+font-weight:500;
+font-size:13px;
+letter-spacing:.5px;
+color:var(--charcoal);
+}
+
+/* INFO SECTION */
+
+.info{
+padding:80px 6%;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+background:var(--cream);
+border-top:1px solid var(--line);
+}
+
+.info h3{
+font-size:17px;
+font-weight:600;
+letter-spacing:1px;
+margin-bottom:22px;
+text-transform:uppercase;
+}
+
+.info ul{
+list-style:none;
+line-height:2.1;
+font-size:14px;
+color:var(--muted);
+}
+
+.stats-row{
+display:flex;
+justify-content:space-between;
+font-size:14px;
+color:var(--muted);
+padding:8px 0;
+border-bottom:1px dashed var(--line);
+}
+
+.stats-row span:last-child{
+color:var(--ink);
+font-weight:500;
+}
+
+.contact p{
+margin:10px 0;
+font-size:14px;
+color:var(--muted);
+}
+
+.contact i{
+width:18px;
+color:var(--gold);
+}
+
+/* FOOTER */
+
+footer{
+background:var(--ink);
+color:#cfc8bd;
+padding:24px 6%;
+display:flex;
+justify-content:space-between;
+font-size:12px;
+letter-spacing:.5px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.hero-left{
+padding:50px 30px;
+}
+
+.hero-left h1{
+font-size:46px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+.details{
+grid-template-columns:1fr 1fr;
+}
+
+.detail:nth-child(3n+2){
+border-left:none;
+border-right:none;
+padding-left:0;
+}
+
+.gallery{
+grid-template-columns:1fr 1fr;
+}
+
+.info{
+grid-template-columns:1fr 1fr;
+}
+
+.navbar{
+flex-direction:column;
+gap:16px;
+}
+
+.nav-right{
+flex-direction:column;
+gap:16px;
+}
+
+footer{
+flex-direction:column;
+gap:8px;
+text-align:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+<h1>TANISHKA SHARMA</h1>
+<p>FASHION &nbsp;|&nbsp; BRIDAL &nbsp;|&nbsp; COMMERCIAL MODEL</p>
+</div>
+
+<div class="nav-right">
+
+<div class="nav-links">
+<a href="#" class="active">HOME</a>
+<a href="#about">ABOUT</a>
+<a href="#portfolio">PORTFOLIO</a>
+<a href="#experience">EXPERIENCE</a>
+<a href="#contact">CONTACT</a>
+</div>
+
+<div class="social">
+<a href="https://www.instagram.com/_tanishka_0008/?hl=en"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fas fa-envelope"></i></a>
+</div>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<p class="greet">Hello,</p>
+
+<h1>I'M TANISHKA<br>SHARMA</h1>
+
+<div class="line"></div>
+
+<h2>Fashion &amp; Bridal Model</h2>
+
+<p>
+A passionate and dedicated model with a love for elegance,
+tradition and timeless beauty.
+</p>
+
+<a href="#portfolio" class="btn">VIEW PORTFOLIO</a>
+
+</div>
+
+<div class="hero-right">
+<img src="1.png" alt="Ayesha Sharma hero photo">
+</div>
+
+</section>
+
+<section class="about" id="about">
+
+<img src="6.png" alt="Ayesha Sharma about photo" class="about-photo">
+
+<div class="about-content">
+
+<p class="eyebrow">WHO I AM</p>
+<h2>About Me</h2>
+
+<p>
+I am a professional model with experience in fashion,
+bridal, commercial and lifestyle photoshoots.
+I love expressing emotions through my work and bringing
+creativity to life in front of the camera.
+</p>
+
+<div class="details">
+
+<div class="detail">
+<i class="fas fa-ruler-vertical"></i>
+<h4>HEIGHT</h4>
+<p>5'6" (168 cm)</p>
+</div>
+
+<div class="detail">
+<i class="fas fa-weight-scale"></i>
+<h4>WEIGHT</h4>
+<p>62 kg</p>
+</div>
+
+<div class="detail">
+<i class="fas fa-user"></i>
+<h4>HAIR COLOR</h4>
+<p>Black & Brown</p>
+</div>
+
+<div class="detail">
+<i class="fas fa-eye"></i>
+<h4>EYE COLOR</h4>
+<p>Black</p>
+</div>
+
+<div class="detail">
+<i class="fas fa-star"></i>
+<h4>SKIN TONE</h4>
+<p>Wheatish</p>
+</div>
+
+<div class="detail">
+<i class="fas fa-language"></i>
+<h4>LANGUAGES</h4>
+<p>Hindi, English</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="portfolio" id="portfolio">
+
+<p class="eyebrow-center">SELECTED WORK</p>
+<h2>Portfolio Highlights</h2>
+
+<div class="gallery">
+
+<div class="gallery-item">
+<img src="2.png" alt="Traditional Bridal">
+<h4>TRADITIONAL BRIDAL</h4>
+</div>
+
+<div class="gallery-item">
+<img src="3.png" alt="Bridal Close-up">
+<h4>BRIDAL CLOSE-UP</h4>
+</div>
+
+<div class="gallery-item">
+<img src="4.png" alt="Ethnic Wear">
+<h4>ETHNIC WEAR</h4>
+</div>
+
+<div class="gallery-item">
+<img src="5.png" alt="Mehendi Look">
+<h4>MEHENDI LOOK</h4>
+</div>
+
+<div class="gallery-item">
+<img src="7.png" alt="Festive Bridal">
+<h4>FESTIVE BRIDAL</h4>
+</div>
+
+</div>
+
+</section>
+
+<section class="info" id="experience">
+
+<div>
+<h3>Specializations</h3>
+<ul>
+<li>Fashion Modeling</li>
+<li>Bridal Modeling</li>
+<li>Ethnic Wear</li>
+<li>Jewelry Campaigns</li>
+<li>Beauty &amp; Makeup</li>
+</ul>
+</div>
+
+<div>
+<h3>Experience</h3>
+<ul>
+<li>Bridal Photoshoots</li>
+<li>Designer Campaigns</li>
+<li>Jewelry Promotions</li>
+<li>Commercial Ads</li>
+<li>Beauty Collaborations</li>
+</ul>
+</div>
+
+<div>
+<h3>Stats</h3>
+<div class="stats-row"><span>Bust</span><span>#</span></div>
+<div class="stats-row"><span>Waist</span><span>#</span></div>
+<div class="stats-row"><span>Hips</span><span>#</span></div>
+<div class="stats-row"><span>Shoe Size</span><span>#</span></div>
+</div>
+
+<div class="contact" id="contact">
+<h3>Contact</h3>
+<p><i class="fas fa-phone"></i> &nbsp;+91 8448991569</p>
+<p><i class="fas fa-envelope"></i> &nbsp;yourmail@gmail.com</p>
+<p><i class="fab fa-instagram"></i> &nbsp;@_tanishka_0008</p>
+<p><i class="fab fa-facebook-f"></i> &nbsp;facebook.com/yourusername</p>
+</div>
+
+</section>
+
+<footer>
+<div>© 2026 TANISHKA SHARMA. ALL RIGHTS RESERVED.</div>
+<div>MODEL PORTFOLIO WEBSITE</div>
+</footer>
+
+</body>
+</html>
